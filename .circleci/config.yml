@@ -98,7 +98,7 @@ jobs:
       - run:
           name: Add upload-key.keystore file
           working_directory: android
-          command:  |
+          command: |
             cd app
             echo "$ANDROID_KEYSTORE" | base64 --decode > upload-key.keystore
 
@@ -139,16 +139,16 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - 'c5:bd:6d:0b:a1:39:97:83:ca:b5:13:59:14:ff:49:40'
+            - "c5:bd:6d:0b:a1:39:97:83:ca:b5:13:59:14:ff:49:40"
 
       - checkout
 
-      - run:
-          name: Check if app has a paid plan
-          command: |
-            if [ "$HAS_PAID_PLAN" != 1 ]; then
-              exit 1
-            fi
+      # - run:
+      #     name: Check if app has a paid plan
+      #     command: |
+      #       if [ "$HAS_PAID_PLAN" != 1 ]; then
+      #         exit 1
+      #       fi
 
       - run:
           name: set Ruby version
