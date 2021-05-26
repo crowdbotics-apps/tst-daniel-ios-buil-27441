@@ -189,6 +189,10 @@ jobs:
           key: 1-pods-{{ checksum "ios/Podfile.lock" }}
           paths:
             - ios/Pods
+      - run:
+          name: Install MacOS ffi
+          command: gem inst ffi -- --disable-system-libffi
+          working_directory: ios
 
       - run:
           name: Update CocaPods dependencies

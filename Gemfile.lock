@@ -271,7 +271,6 @@ DEPENDENCIES
   cocoapods
   fastlane
   fastlane-plugin-increment_version_code
-  ffi
   httparty
 
 BUNDLED WITH
