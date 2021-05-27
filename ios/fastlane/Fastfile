@@ -34,7 +34,12 @@ platform(:ios) do
     run_tests(
       workspace: workspace_name,
       scheme: base_name,
-      build_for_testing: true
+      build_for_testing: true,
+      devices: ["iPhone 6s", "iPad Air"]
+    )
+    scan(
+      workspace: "Example.xcworkspace",
+      devices: ["iPhone 6s", "iPad Air"]
     )
   end
 
