@@ -31,8 +31,10 @@ platform(:ios) do
 
   desc('Runs all the tests')
   lane(:tests) do
-    scan(
+    run_tests(
       workspace: workspace_name,
+      scheme: base_name,
+      build_for_testing: true,
       devices: ["iPhone 6s", "iPad Air"]
     )
   end
